@@ -1,10 +1,15 @@
-<html>
-    <head>
-        
-    </head>
-    <body>
-        @yield('judul_menu')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-        @yield('isi_menu')
-    </body>
+    @yield('styles')
+
+</head>
+<body>
+    <nav> <p> Ini navbar </p>  </nav> 
+
+        @yield('content')
+
+</body>
 </html>

@@ -5,12 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 
+Route::get('/produk', function () {
+    return view('produk');
+});
+
 
 Route::middleware(['auth', 'role:admin,owner'])->group(function () {
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 });
-
-
 
 Route::get('/home', function () {
     $user = Auth::user();
@@ -34,4 +36,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+Route::get('barang', function () {
+    return view('barang');
+});
+
+
+
 require __DIR__.'/auth.php';
