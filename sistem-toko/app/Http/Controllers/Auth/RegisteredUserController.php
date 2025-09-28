@@ -40,7 +40,7 @@ $user = \App\Models\User::create([
     'name' => $request->name,
     'email' => $request->email,
     'password' => Hash::make($request->password),
-    'role' => 'users', // default role
+    'role' => 'user', // default role
 ]);
 
 
