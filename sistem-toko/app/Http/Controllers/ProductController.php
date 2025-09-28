@@ -10,6 +10,21 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     public function cekAngka($angka)
+    {
+        if ($angka % 2 == 0) {
+            $message = "Nilai $angka adalah Genap";
+            $type = "success";
+        } else {
+
+            $message = "Nilai $angka adalah Ganjil";
+            $type = "warning";
+        }
+
+        return view('produk', compact('message', 'type'));
+    }
+
     public function index()
     {
         $angka = 0; // Inisialisasi variabel $angka

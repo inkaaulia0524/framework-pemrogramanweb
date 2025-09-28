@@ -7,7 +7,7 @@
 
 </head>
 <body>
-    <nav> <h1 class="text-2xl font-bold mb-4">Daftar Produk</h1> </nav> 
+    <nav> <h1 class="text-2xl font-bold mb-4">Cek Angka</h1> </nav> 
 
         @yield('content')
 

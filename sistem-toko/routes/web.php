@@ -10,8 +10,12 @@ Route::get('/', function () {
 });
 
 Route::get('/produk', function () {
-    return view('produk');
+    $message = "Belum ada angka dicek.";
+    $type = "info";
+    return view('produk', compact('message', 'type'));
 });
+
+Route::get('/produk/{angka}', [ProductController::class, 'cekAngka']);
 
 Route::middleware(['auth', 'role:admin,owner'])->group(function () {
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
@@ -38,11 +42,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-
-Route::get('barang', function () {
-    return view('barang');
 });
 
 
