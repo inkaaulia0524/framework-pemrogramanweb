@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container mx-auto p-6">
-    <h1 class="text-2xl font-bold mb-4">Daftar Produk</h1>
 
     <table class="table-auto border-collapse border border-gray-400 w-full">
         <thead>

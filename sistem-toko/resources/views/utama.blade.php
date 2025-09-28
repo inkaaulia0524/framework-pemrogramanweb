@@ -7,7 +7,7 @@
 
 </head>
 <body>
-    <nav> <p> Ini navbar </p>  </nav> 
+    <nav> <h1 class="text-2xl font-bold mb-4">Daftar Produk</h1> </nav> 
 
         @yield('content')
 

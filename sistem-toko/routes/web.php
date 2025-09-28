@@ -5,10 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 
+Route::get('/', function () {
+    return view('auth.login');
+});
+
 Route::get('/produk', function () {
     return view('produk');
 });
-
 
 Route::middleware(['auth', 'role:admin,owner'])->group(function () {
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
