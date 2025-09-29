@@ -3,10 +3,17 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UtsController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('auth.login');
+});
+
+Route::prefix('uts')->group(function () {
+    Route::get('/', [UtsController::class, 'index'])->name('uts.index');
+    Route::get('/pemrograman-web', [UtsController::class, 'pemrogramanWeb'])->name('uts.pemrograman');
+    Route::get('/database', [UtsController::class, 'database'])->name('uts.database');
 });
 
 Route::get('/produk', function () {
