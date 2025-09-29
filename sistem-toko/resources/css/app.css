@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    caret-color: black !important;
+    color: black !important;       /* teksnya jelas */
+    background-color: white !important; /* pastikan background kontras */
+    border: 1px solid #ccc !important;  /* biar jelas area input */
+}
+

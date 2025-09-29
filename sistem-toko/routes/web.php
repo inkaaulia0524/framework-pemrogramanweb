@@ -10,9 +10,7 @@ Route::get('/', function () {
 });
 
 Route::get('/produk', function () {
-    $message = "Belum ada angka dicek.";
-    $type = "info";
-    return view('produk', compact('message', 'type'));
+    return view('produk');
 });
 
 Route::get('/produk/{angka}', [ProductController::class, 'cekAngka']);
@@ -34,7 +32,6 @@ Route::post('/logout', function () {
     Auth::logout();
     request()->session()->invalidate();
     request()->session()->regenerateToken();
-
     return redirect('/login');
 })->name('logout');
 

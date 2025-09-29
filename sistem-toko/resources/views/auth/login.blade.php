@@ -13,7 +13,7 @@
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            <x-text-input id="email" class="block mt-1 w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 caret-black"
                           type="email"
                           name="email"
                           :value="old('email')"
@@ -25,7 +25,7 @@
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            <x-text-input id="password" class="block mt-1 w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 caret-black"
                           type="password"
                           name="password"
                           required autocomplete="current-password" />
