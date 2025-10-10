@@ -7,11 +7,24 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
 
-     public function cekAngka($angka)
+public function store(Request $request )
+    {
+        $validatedData = $request->validate([
+            'product_name' => 'required|string|max:255',
+            'unit' => 'required|string|max:100',
+            'type' => 'required|string|max:100',
+            'information' => 'nullable|string',
+            'qty' => 'required|integer|min:0',
+            'producer' => 'required|string|max:255',
+        ]);
+
+        Product::create($validatedData);
+
+        return redirect()->route('product-create')->with('success', 'Product created successfully.');
+    }
+
+    public function cekAngka($angka)
     {
         if ($angka % 2 == 0) {
             $message = "Nilai $angka adalah Genap";
@@ -25,28 +38,17 @@ class ProductController extends Controller
         return view('produk', compact('message', 'type'));
     }
 
+    public function create()
+    {
+        return view('master-data.product-master.create-product');
+    }
+
     public function index()
     {
         $angka = 0; // Inisialisasi variabel $angka
         $hasil = $angka + 10; // bebas mau ditambah berapa
 
         return view('products.index', compact('hasil'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
