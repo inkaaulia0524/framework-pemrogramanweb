@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UtsController;
 use Illuminate\Support\Facades\Auth;
 
+Route::resource('product', ProductController::class);
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -48,7 +50,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/product/create', [ProductController::class, 'create'])->name('product-create');
-Route::post('/product', [ProductController::class, 'store'])->name('product-store');
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 
 require __DIR__.'/auth.php';
