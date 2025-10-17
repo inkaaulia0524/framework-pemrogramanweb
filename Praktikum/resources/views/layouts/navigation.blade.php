@@ -4,7 +4,7 @@
         <x-slot name="trigger">
             <button
                 class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
-                <div>Data Master</div>
+                <div>Halaman Utama</div>
 
 
                 <div class="ms-1">
@@ -18,9 +18,9 @@
 
 
         <x-slot name="content">
-            <x-dropdown-link :href="route('product-create')">
-                Product Master
-            </x-dropdown-link>
+            <x-dropdown-link :href="route('product.index')">
+                    Daftar Produk
+                </x-dropdown-link>
 
 
         </x-slot>
